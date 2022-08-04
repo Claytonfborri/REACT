@@ -1,0 +1,147 @@
+.header-azul {
+    display: flex;
+    width: 100%;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+
+    background: #106EB0;
+
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.button-hamburguer{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 0px;
+    top: 0px;
+
+    background: #004480;
+}
+
+.container p {
+    position: absolute;
+    width: 196px;
+    height: 23.69px;
+    left: 177px;
+    top: 26px;
+
+    /* Lato bold left 18 */
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+
+    /* white */
+
+    color: #FFFFFF;
+}
+
+.container strong {
+    position: absolute;
+    left: 1285px;
+    top: 28px;
+
+    /* Lato bold left 14 */
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+}
+
+.usuario {
+    position: absolute;
+    width: 32px;
+    height: 30px;
+    left: 1240px;
+    top: 20px;
+    align-items: center;
+    background-color: #E5E5E5;;
+
+}
+
+.vetorDown {
+    position: absolute;
+    width: 16px;
+    height: 7.5px;
+    left: 1440px;
+    top: 31px;
+    align-items: center;
+}
+
+.search{
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    left: 1495px;
+    top: 25px;
+    align-items: center;
+}
+
+.info{
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    top: 25px;
+    left: 1535px;
+    align-items: center;
+}
+
+.clientes{
+    position: absolute;
+    top: 230px;
+    left: 326px;
+}
+
+.consultarClientes {
+    position: absolute;
+    top: 262px;
+    left: 314px;
+    padding: 37px 43px 37px 28px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+}
+
+.cadastraClientes {
+    position: absolute;
+    top: 262px;
+    left: 612px;
+    padding: 37px 51px 37px 28px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+}
+
+.consulta {
+    position: absolute;
+    top: 450px;
+    left: 326px;
+}
+
+.agenda {
+    position: absolute;
+    top: 480px;
+    left: 314px;
+    padding: 37px 129px 37px 28px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+}
+
+.novaCosulta{
+    position: absolute;
+    top: 480px;
+    left: 612px;
+    padding: 37px 72px 37px 28px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+}
