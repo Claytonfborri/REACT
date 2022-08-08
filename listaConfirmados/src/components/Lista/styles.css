@@ -1,0 +1,16 @@
+.mostrarLista{
+    padding: 1em;
+    margin: 0 2em;
+    border-bottom: 1px solid #2c3035;
+}
+
+input[type="submit"]{
+    background-color: #333;
+    color: #eee;
+    display: block;
+    width: 100%;
+    border: 1px solid #222;
+    border-radius: 5px;
+    padding: 1em;
+    cursor: pointer;
+  }
