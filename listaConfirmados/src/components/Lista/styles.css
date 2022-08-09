@@ -1,16 +1,37 @@
-.mostrarLista{
-    padding: 1em;
-    margin: 0 2em;
-    border-bottom: 1px solid #2c3035;
+.lista-mensalista {
+    padding: 0 1em 2em;
+    margin: 1em 2em;
 }
 
-input[type="submit"]{
-    background-color: #333;
-    color: #eee;
-    display: block;
-    width: 100%;
-    border: 1px solid #222;
-    border-radius: 5px;
-    padding: 1em;
+.lista-mensalista h2 {
+    margin-bottom: 0;
+}
+
+.lista-mensalista p {
+    text-align: center;
+}
+
+.todo{
+    border-bottom: 1px solid #444;
+    padding: 1em 0;
+}
+
+.todo h3 {
+    margin-bottom: .5em;
+}
+
+.confirmado {
+    font-weight: bold;
+    color: rgb(42, 231, 42);
+}
+
+.todo svg {
+    font-size: 1.2em;
     cursor: pointer;
-  }
+    margin-right: 1em;
+    transition: .5s;
+}
+
+.todo svg:hover {
+    color: rgb(240, 98, 146);
+}

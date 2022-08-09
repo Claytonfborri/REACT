@@ -1,16 +1,18 @@
 
 import './App.css'
-import Jogadores from './components/Jogadores'
-import Lista from './components/Lista'
+
+import Mensalistas from './components/Mensalistas';
+import Header from './components/Header';
+
+
+const API = 'http://localhost:5000';
 
 function App() {
+
   return (
     <div className="App">
-      <div className="list-header">
-        <h3>Lista de confirmados:</h3>
-      </div>
-      <Jogadores />
-      <Lista  onClick=''/>
+     <Header />
+      <Mensalistas nomeAPI = {API}/>
     </div>
   )
 }

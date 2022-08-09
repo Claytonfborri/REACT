@@ -11,3 +11,7 @@
   border-bottom: 1px solid #2c3035;
   text-align: center;
 }
+
+.list-header h1 {
+  margin: 0;
+}
