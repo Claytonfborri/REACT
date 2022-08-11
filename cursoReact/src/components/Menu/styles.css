@@ -1,0 +1,89 @@
+.menuList {
+    display: flex;
+    flex-direction: column;
+    height: 770px;
+    width: 220px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+    background: #E5E5E5;
+}
+
+.menuList p{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 220px;
+    cursor: pointer;
+
+}
+.menuList p a{
+    display: flex;
+    align-items: center;
+    padding-left: 17px;
+    gap: 3rem;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+
+}
+
+.conteinerButton {
+    height: 50px;
+    width: 220px;
+    cursor: pointer;
+    padding-left: 17px;
+    gap: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.conteinerButton a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+    
+}
+
+.react-icons {
+    color: rgba(255, 144, 0, 1);
+    height: 30px;
+    width: 23px;
+}
+
+.buttonClientes {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background: #E5E5E5;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding-left: 50px;
+    width: 220px;
+    z-index: 2;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    padding: 8px 12px;
+  }
+  
+  li:hover {
+    cursor: pointer;
+  }
