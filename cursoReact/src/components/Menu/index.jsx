@@ -33,10 +33,10 @@ const Menu = () => {
             <div className="dropdown">
               <ul>
                 <li>
-                  <Link to="/consultarCliente/:cpf">Consultar Clientes</Link>
+                  <Link to="/consultarCliente">Consultar Clientes</Link>
                 </li>
                 <li>
-                  <Link to="cadastrarCliente">Cadastrar Clientes</Link>
+                  <Link to="/cadastrarCliente">Cadastrar Clientes</Link>
                 </li>
               </ul>
             </div>

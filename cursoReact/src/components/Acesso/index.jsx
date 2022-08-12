@@ -9,10 +9,10 @@ const Acesso = () => {
       <div className="acessoItens">
         <h2>Clientes</h2>
         <button>
-          <Link to="cadastrarCliente">Cadastrar Clientes</Link>
+          <Link to="/cadastrarCliente">Cadastrar Clientes</Link>
         </button>
         <button>
-          <Link to="/consultarCliente/:cpf">Consultar Clientes</Link>
+          <Link to="/consultarCliente">Consultar Clientes</Link>
         </button>
       </div>
     </div>
