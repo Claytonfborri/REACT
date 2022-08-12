@@ -1,0 +1,62 @@
+.campos {
+    display: flex;
+    flex-direction: column;
+    height: 640px;
+    width: 1127px;
+    left: 0px;
+    top: 0px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.campos h2{
+    position: absolute;
+    height: 38px;
+    width: 300px;
+    left: 296px;
+    top: 117px;
+}
+
+
+.campos form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    width: 902px;
+    border-radius: 20px;
+    top: 100px;
+    left: 100px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    
+}
+.campos form label {
+    height: 29px;
+    width: 78px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: left;
+    margin: 10px;
+
+}
+
+.campos form input {
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    padding: .5rem;
+
+}
+
+.campos form input[type="submit"] {
+    color: #eee;
+    width: 109px;
+    border-radius: 20px;
+    margin: 20px;
+    background: #FB8315;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+}

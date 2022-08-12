@@ -1,0 +1,46 @@
+.acesso {
+    display: flex;
+    flex-direction: row;
+    background-color: #E5E5E5;
+}
+
+.acessoItens{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-left: 51px;
+}
+
+.acessoItens h2 {
+    position: relative;
+    height: 22px;
+    width: 65px;
+    left: 70px;
+    top: 5px;
+    border-radius: nullpx;
+
+}
+
+.acessoItens button {
+    border: none;
+    font-size: 18px; 
+    margin-left: 50px;
+    height: 96px;
+    width: 218px;
+    border-radius: 20px;
+    margin-top: 80px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.acessoItens button a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    justify-content: center;
+    height: 96px;
+
+    color: #000000;
+
+   
+}
