@@ -73,6 +73,7 @@ const Mensalistas = (props) => {
   if (loading) {
     return <p>Atualizando lista de jogadores mensalistas...</p>;
   }
+  console.log(nomesMensalista);
 
   return (
     <div className="form-mensalistas">
