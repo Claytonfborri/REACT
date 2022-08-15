@@ -1,0 +1,35 @@
+
+npm install react-router-dom
+
+Para configurar as rotas, precisa realizar um import dos componentes
+	import {BrowserRouter, Routes, Route } from 'react-router-dom'
+
+Dentro do main.jsx
+
+	Dentro do componente React.StrictMode, configurar as rotas:
+		<BrowserRouter> //Abraçando todos.
+			<Routes>
+			OBS: Rotas irão girar dentro do componente APP
+				<Route element= {<App />}> //Definindo o componente pai do projeto
+					//Aqui dentro irá definir as rotas que tem no projeto.
+					<Route path="/" element= {<Home />} />
+					<Route path="movie/:id" element= {<Movie />} />
+					<Route path="search" element= {<Search />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+		
+			Depois disso precisa criar os componentes em uma pasta pages(para deixar ornaizado)
+			
+			Após a criação dos componentes de rotas, ir para o componente APP(pai) para criar os links e Importar o Link do react-router-dom e ver a mudança da URL:
+			 Cria um nav bar para test:
+			 <nav id='navbar'>
+			 	<h2>
+			 		<Link to="/"> MoviesLib</ Link>
+			 	</h2>
+			 	<Link to="/movie/1"> Movie</ Link>
+			 	<Link to="/search"> Search</ Link>
+			 </nav>
+			//Para ver o conteúdo dos componentes de rota que está pedindo para acessar precisa importar um componente: Outlet
+			<Outlet />
+			
