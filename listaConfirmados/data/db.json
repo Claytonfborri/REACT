@@ -1,14 +1,19 @@
 {
   "jogadores": [
     {
-      "id": 0.5502529741331461,
+      "id": 0.37661569165863895,
       "mensalistas": "Clayton",
       "done": true
     },
     {
-      "id": 0.3223896725828137,
-      "mensalistas": "Jose",
-      "done": false
+      "id": 0.7532298926780139,
+      "mensalistas": "Bruno",
+      "done": true
+    },
+    {
+      "id": 0.8646939387081911,
+      "mensalistas": "Lucas",
+      "done": true
     }
   ]
 }
