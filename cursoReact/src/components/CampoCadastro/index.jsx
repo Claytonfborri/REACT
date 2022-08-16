@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import "./styles.css";
 import InputMask from "react-input-mask";
 import Lista from "../Lista";
-import CampoConsulta from "../CampoConsulta";
+
+import "./styles.css";
 
 const API = "http://localhost:5000";
 
@@ -58,8 +58,6 @@ const CampoCadastro = () => {
     setClientes((prevState) => prevState.filter((nomes) => nomes.id !== id));
   };
 
-
-
   if (loading) {
     return <p>Atualizando lista de clientes...</p>;
   }
@@ -92,7 +90,6 @@ const CampoCadastro = () => {
         </div>
       </form>
       <Lista nomes={clientes} delete={handleDelete} />
- 
     </div>
   );
 };

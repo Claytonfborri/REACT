@@ -14,6 +14,11 @@
       "id": 0.9979680722752995,
       "nomeCliente": "Sergio",
       "cpfCnpjCliente": "333.333.333-33"
+    },
+    {
+      "id": 0.3973307372482793,
+      "nomeCliente": "Roseli",
+      "cpfCnpjCliente": "555.555.555-55"
     }
   ]
 }
