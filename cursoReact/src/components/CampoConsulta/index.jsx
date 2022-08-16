@@ -35,8 +35,6 @@ const CampoConsulta = () => {
       .then((data) => setConsulta(data))
       .catch((err) => console.log(err));
 
-    console.log(consulta);
-
     setCpfCnpjCliente("");
   };
 
@@ -58,7 +56,7 @@ const CampoConsulta = () => {
           <input type="submit" value="Consultar" />
         </div>
       </form>
-      <ListaClientes aoConsultar={consulta}/>
+      <ListaClientes aoConsultar={consulta} />
     </div>
   );
 };

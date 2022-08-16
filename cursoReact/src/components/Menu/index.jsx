@@ -22,25 +22,23 @@ const Menu = () => {
           </Link>
         </p>
         <div className="conteinerButton">
-          <button
-            type="button"
-            className="buttonClientes"
-            onClick={toggling}
-          >
+          <button type="button" className="buttonClientes" onClick={toggling}>
             <BsPeopleFill />
             Clientes
             {isOpen ? <RiArrowDownSLine /> : <RiArrowUpSLine />}
           </button>
           <div className="dropdown">
-            {isOpen &&(<ul>
-              <Link to="/consultarCliente">
-                <li>Consultar Clientes </li>
-              </Link>
+            {isOpen && (
+              <ul>
+                <Link to="/consultarCliente">
+                  <li>Consultar Clientes </li>
+                </Link>
 
-              <Link to="/cadastrarCliente">
-                <li>Cadastrar Clientes</li>
-              </Link>
-            </ul>)}
+                <Link to="/cadastrarCliente">
+                  <li>Cadastrar Clientes</li>
+                </Link>
+              </ul>
+            )}
           </div>
         </div>
       </IconContext.Provider>
