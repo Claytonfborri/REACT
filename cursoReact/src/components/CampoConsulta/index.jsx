@@ -1,25 +1,43 @@
-import { useState } from "react";
-import InputMask from 'react-input-mask'
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import InputMask from "react-input-mask";
 import ListaClientes from "../ListaClientes";
+
 import "./styles.css";
 
 const API = "http://localhost:5000";
 
 const CampoConsulta = () => {
-  const navigate = useNavigate(); //função de redirecionamento no componente
-
-
   const [cpfCnpjCliente, setCpfCnpjCliente] = useState("");
+  const [resultado, setResultado] = useState([]);
+  const [consulta, setConsulta] = useState([]);
 
+  useEffect(() => {
+    const loadData = async () => {
+      const res = await fetch(API + "/clientes")
+        .then((res) => res.json())
+        .then((data) => data)
+        .catch((err) => console.log(err));
 
-  const handleSubmit = (e) => {
+      setResultado(res);
+    };
+    loadData();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(!cpfCnpjCliente) return
+    if (!cpfCnpjCliente) return;
 
-    navigate(`/consultarCliente?q=${cpfCnpjCliente}`)
-    setCpfCnpjCliente('')
+    await fetch(API + "/clientes/?cpfCnpjCliente=" + cpfCnpjCliente, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => setConsulta(data))
+      .catch((err) => console.log(err));
+
+    console.log(consulta);
+
+    setCpfCnpjCliente("");
   };
 
   return (
@@ -27,9 +45,9 @@ const CampoConsulta = () => {
       <h2>Consultar Clientes</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-control">
-         
           <label htmlFor="cpfCnpjCliente">CPF/CNPJ:</label>
-          <InputMask mask='999.999.999-99'
+          <InputMask
+            mask="999.999.999-99"
             type="text"
             name="cpfCnpjCliente"
             placeholder="CPF/CNPJ do cliente"
@@ -40,7 +58,7 @@ const CampoConsulta = () => {
           <input type="submit" value="Consultar" />
         </div>
       </form>
-      <ListaClientes />
+      <ListaClientes aoConsultar={consulta}/>
     </div>
   );
 };

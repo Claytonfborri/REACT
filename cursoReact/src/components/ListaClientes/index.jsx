@@ -1,31 +1,24 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+
 import "./styles.css";
 
-const ListaClientes = () => {
-  const [searchParams] = useSearchParams(); //destruturar a primeira pesquisa para pegar no get.
-  const [clientes, setClientes] = useState([]);
-  const query = searchParams.get("q");
-
-  const clienteConsultado = async (url) => {
-    const res = await fetch(url);
-    const data = await res.json();
-
-    setClientes(data);
-  };
-
-//   useEffect(() => {
-//     const procurando = `${searchURL}?${apiKey}&query=${query}`;
-//     getSearchedMovies(searchWithQueryURL);
-//   }, [query]);
-
-
+const ListaClientes = (props) => {
+ 
   return (
-    <div className="clienteConsultado">
-      <h3>Resultado da Consulta:</h3>
-      <p>Ola</p>
+    <div className="lista-clientes">
+       {props.aoConsultar.length === 0 && <h4>Não há clientes consultados!</h4>}
+        {props.aoConsultar.map((nome) => (
+          <div className="todo" key={nome.id}>
+            <p>
+              Nome :<strong> {nome.nomeCliente}</strong>{" "}
+            </p>
+            <p>
+              CPF/CNPJ: <strong>{nome.cpfCnpjCliente}</strong>
+            </p>
+          </div>
+        ))}
     </div>
-  );
+    
+  )
 };
 
 export default ListaClientes;

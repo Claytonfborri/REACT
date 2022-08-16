@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
-import InputMask from 'react-input-mask'
+import InputMask from "react-input-mask";
 import Lista from "../Lista";
+import CampoConsulta from "../CampoConsulta";
 
 const API = "http://localhost:5000";
 
@@ -11,17 +12,14 @@ const CampoCadastro = () => {
   const [clientes, setClientes] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  
-  
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
 
       const res = await fetch(API + "/clientes")
         .then((res) => res.json())
-        .then((data) => (data))
+        .then((data) => data)
         .catch((err) => console.log(err));
-
 
       setLoading(false);
       setClientes(res);
@@ -48,18 +46,16 @@ const CampoCadastro = () => {
     });
 
     setClientes((prevState) => [...prevState, nomes]);
-
+    console.log(clientes);
     setNomeCliente("");
     setCpfCnpjCliente("");
   };
-  
+
   const handleDelete = async (id) => {
     await fetch(API + "/clientes/" + id, {
       method: "DELETE",
     });
-    setClientes((prevState) =>
-      prevState.filter((nomes) => nomes.id !== id)
-    );
+    setClientes((prevState) => prevState.filter((nomes) => nomes.id !== id));
   };
 
 
@@ -67,9 +63,6 @@ const CampoCadastro = () => {
   if (loading) {
     return <p>Atualizando lista de clientes...</p>;
   }
-
-  console.log(clientes);
-
 
   return (
     <div className="campos">
@@ -86,7 +79,8 @@ const CampoCadastro = () => {
             required
           />
           <label htmlFor="cpfCnpjCliente">CPF/CNPJ:</label>
-          <InputMask mask='999.999.999-99'
+          <InputMask
+            mask="999.999.999-99"
             type="text"
             name="cpfCnpjCliente"
             placeholder="CPF/CNPJ do cliente"
@@ -97,7 +91,8 @@ const CampoCadastro = () => {
           <input type="submit" value="Cadastrar" />
         </div>
       </form>
-      <Lista nomes={clientes} delete={handleDelete}/>
+      <Lista nomes={clientes} delete={handleDelete} />
+ 
     </div>
   );
 };
