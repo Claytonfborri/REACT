@@ -3,13 +3,14 @@ import { BiHome } from "react-icons/bi";
 import { BsPeopleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
+import { useState } from "react";
 
 import "./styles.css";
 
 const Menu = () => {
-  const handleButtonClick = () => {
-    console.log("olá");
-  };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggling = () => setIsOpen(!isOpen);
 
   return (
     <div className="menuList">
@@ -24,14 +25,14 @@ const Menu = () => {
           <button
             type="button"
             className="buttonClientes"
-            onClick={handleButtonClick}
+            onClick={toggling}
           >
             <BsPeopleFill />
             Clientes
-            <RiArrowDownSLine />
+            {isOpen ? <RiArrowDownSLine /> : <RiArrowUpSLine />}
           </button>
           <div className="dropdown">
-            <ul>
+            {isOpen &&(<ul>
               <Link to="/consultarCliente">
                 <li>Consultar Clientes </li>
               </Link>
@@ -39,7 +40,7 @@ const Menu = () => {
               <Link to="/cadastrarCliente">
                 <li>Cadastrar Clientes</li>
               </Link>
-            </ul>
+            </ul>)}
           </div>
         </div>
       </IconContext.Provider>

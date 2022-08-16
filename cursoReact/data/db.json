@@ -1,13 +1,18 @@
 {
   "clientes": [
     {
-      "id": 0.1704491321020103,
-      "nomeCliente": "Bruno",
+      "id": 0.8988560199799547,
+      "nomeCliente": "Clayton",
+      "cpfCnpjCliente": "111.111.111-11"
+    },
+    {
+      "id": 0.9259996321237809,
+      "nomeCliente": "Carlos",
       "cpfCnpjCliente": "222.222.222-22"
     },
     {
-      "id": 0.8474730374730084,
-      "nomeCliente": "Clayton",
+      "id": 0.9979680722752995,
+      "nomeCliente": "Sergio",
       "cpfCnpjCliente": "333.333.333-33"
     }
   ]
