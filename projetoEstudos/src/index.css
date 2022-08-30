@@ -1,0 +1,19 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  padding-bottom: 500px;
+  text-align: center;
+}
+
+.car_container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.car_container div {
+  margin-top: 50px;
+}
