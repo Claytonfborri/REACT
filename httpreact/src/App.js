@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
+// 4 - custom hook
 import { useFetch } from "./hooks/useFetch";
 
 const url = "http://localhost:3000/products";
@@ -8,15 +9,13 @@ const url = "http://localhost:3000/products";
 function App() {
   // const [products, setProducts] = useState([]);
 
-  // Custom hook
-  const { data: items, httpConfig } = useFetch(url);
-
-
+  // 4 - custom hook e 5 - refactor post
+  const { data: items, httpConfig, loading, error } = useFetch(url);
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
 
-  // resgatando dados
+  // 1 - resgatando dados
   // useEffect(() => {
   //   async function fetchData() {
   //     const res = await fetch(url);
@@ -29,8 +28,7 @@ function App() {
   //   fetchData();
   // }, []);
 
-  // add de produtos
-
+  // 2 - add product
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -47,29 +45,41 @@ function App() {
     //   body: JSON.stringify(product),
     // });
 
-    // // Carregamento dinamico
     // const addedProduct = await res.json();
 
+    // 3 - carregamento dinâmico
     // setProducts((prevProducts) => [...prevProducts, addedProduct]);
 
-    //Refatorando post
-
-    httpConfig(product, 'POST')
+    // 5 - refatorar post
+    httpConfig(product, "POST");
 
     setName("");
     setPrice("");
   };
 
+  // 8 - DELETE
+const handleDelete = async (id) => {
+console.log(id);
+  httpConfig(id, "DELETE");
+}
+
   return (
     <div className="App">
       <h1>Lista de produto</h1>
-      <ul>
-        {items?.map((product) => (
-          <li key={product.id}>
-            {product.name} - R$: {product.price}
-          </li>
-        ))}
-      </ul>
+      {/* 6-loading */}
+      {loading && <p>Carregando dados...</p>}
+      {error && <p>{error}</p>}
+      {items.length === 0 && <p>Não há itens na lista</p>}
+      {!error && (
+        <ul>
+          {items && items.map((product) => (
+            <li key={product.id}>
+              {product.name} - R$: {product.price}
+              <button onClick={() => handleDelete(product.id)}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      )}
       <div className="add-product">
         <form onSubmit={handleSubmit}>
           <label>
@@ -79,6 +89,7 @@ function App() {
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
             />
           </label>
           <label>
@@ -88,9 +99,12 @@ function App() {
               name="price"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
+              required
             />
           </label>
-          <input type="submit" value="Criar" />
+          {/* 7- state de loading no post */}
+          {loading && <input type="submit" disabled value="Aguarde" />}
+          {!loading && <input type="submit" value="Criar" />}
         </form>
       </div>
     </div>
